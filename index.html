@@ -4,10 +4,88 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fontawesome icons -->
+  <script src="https://kit.fontawesome.com/3c9b00eab5.js" crossorigin="anonymous"></script>
   <link rel="icon" type="image/icon" href="images/weather_icon.ico" sizes="48x48">
   <title>Weather App</title>
 </head>
 <body>
-  
+  <main>
+    <div class="container">
+      <div class="row">
+        <!-- Refer to the luncay designs to better understand the structure -->
+        <!-- BEGINNING OF FIRST SECTION -->
+        <div class="container">
+          <!-- Weather icon and temperature -->
+          <div class="row">
+            <div class="icon-container">
+              <img src="http://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Icon" id="weather_icon">
+            </div>
+            <div class="temp-container">
+              <span id="temperature">30°C</span>
+            </div>
+          </div>
+          <!-- Weather Condition Text -->
+          <div class="condition-container">
+            <span id="condition">Partial Clouds</span>
+          </div>
+          <!-- Local Time Text -->
+          <div class="time-container">
+            <span id="time">3 : 45 PM</span>
+          </div>
+        </div>
+        <!-- END OF FIRST SECTION -->
+
+        <!-- BEGINNING OF SECOND SECTION -->
+        <div class="container">
+          <div class="location-container">
+            <span class="location city" id="city">London</span>
+            <span class="location country" id="country">United Kingdom</span>
+          </div>
+          <div class="other-conditions-container">
+            <ul class="other-conditions-list">
+              <!--#1 winds -->
+              <li class="winds list-item">
+                <span class="icon wind-icon">
+                  <i class="fas fa-wind"></i>
+                </span>
+                <span class="wind-data" id="winds">30 kmh. SSW</span>
+              </li>
+              <!--#2 atmospheric pressure -->
+              <li class="pressure list-item">
+                <span class="icon pressure-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </span>
+                <span class="pressure-data" id="pressure">1000 mb</span>
+              </li>
+              <!--#3 humidity-->
+              <li class="humidity list-item" >
+                <span class="icon humidity-icon">
+                  <i class="fas fa-tint"></i>
+                </span>
+                <span class="humidity-data" id="humidity">58 %</span>
+              </li>
+              <!--#4 uv index -->
+              <li class="uv-index list-item" >
+                <span class="icon uv-index-icon">
+                  <i class="fas fa-sun"></i>
+                </span>
+                <span class="uv-index-data" id="uv_index">4</span>
+              </li>
+              <!--#5 air quality -->
+              <li class="air-quality list-item">
+                <span class="icon air-quality-icon">
+                  <i class="fas fa-lungs"></i>
+                </span>
+                <span class="air-quality-data" id="air_quality">Unhealthy</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- END OF SECOND SECTION -->
+
+      </div>
+    </div>
+  </main>
 </body>
 </html>
