@@ -129,7 +129,7 @@
   display: inline-block;
   text-align: center;
   width: 10%;
-  margin-right: 10vw;
+  margin-right: 10%;
 }
 
 .list-item span:nth-child(2){
@@ -138,6 +138,7 @@
 
 .btn{
   position: relative;
+  display: block;
   width: 90%;
   max-width: 400px;
   border: 0;
@@ -228,4 +229,32 @@
   margin: 0 auto;
   margin-bottom: 1rem;
 
+}
+
+/* Media Queries */
+@media (min-width: 800px){
+  .main{
+    margin: 2rem auto;
+    padding-top: 2rem;
+  }
+
+  .row{
+    flex-direction: row;
+  }
+
+  .icon-container{
+    height: 200px;
+  }
+
+  #temperature{
+    bottom: 2rem;
+  }
+
+  .time-container{
+    margin-bottom: 2rem;
+  }
+
+  .location.city, .location.country {
+    text-align: left;
+  }
 }
