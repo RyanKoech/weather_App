@@ -16,8 +16,10 @@
 .main{
   background-color: #081B24;
   position: absolute;
-  border-radius: 10vw;
+  border-radius: 40px;
   height: max-content;
+  max-width: 800px;
+  margin: 0 auto;
   top: 0;
   left: 0;
   right: 0;
@@ -106,7 +108,7 @@
   color: #a0bbca;
   display: block;
   text-align: center;
-  font-size: calc(0.4vw + 1.15rem)
+  font-size: calc(0.4vw + 1.15rem);
 }
 
 .other-conditions-container{
@@ -150,4 +152,80 @@
 .btn:hover{
   outline-offset: -2px;
   outline: 5px solid #204255;
+}
+
+/* Modal Styling */
+.overlay{
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #1e1c3681;
+  transition: 0.3s;
+}
+
+.overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal{
+  position: fixed;
+  background-color: #204255;
+  border-radius: 5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 85%;
+  transition: 0.3s;
+}
+
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+  font-family: var(--var-content-font);
+  font-size: calc(0.4vw + 1.5rem);
+  font-weight: 300;
+  text-align: center;
+  margin: 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #a0bbca;
+}
+
+.form-group{
+  margin-bottom: 2rem;
+}
+
+.city-input{
+  outline: 0;
+  border: 0;
+  display: block;
+  width: 80%;
+  border-radius: 5px;
+  background-color: #a0bbca;
+  margin: 0 auto;
+  padding: 0.25rem 0.5rem;
+  color: black;
+}
+
+.city-input:active , .city-input:focus{
+  outline: 2px #204255 solid;
+  outline-offset: -3px;
+}
+
+.modal-footer{
+  margin: 0 auto;
+}
+
+.btn-form{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+
 }
