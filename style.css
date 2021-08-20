@@ -9,14 +9,13 @@
   padding: 0;
   margin: 0;
   font-family: var(--var-content-font);
-  font-size: calc(0.3vw + 1rem);
+  font-size: calc(0.2vw + 1rem);
   color: aliceblue;
 }
 
 .main{
   background-color: #081B24;
   position: absolute;
-  border-radius: 40px;
   height: max-content;
   max-width: 800px;
   margin: 0 auto;
@@ -73,9 +72,9 @@
 
 .condition-container{
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.75rem;
   background-color: #35325F;
-  border-radius: 20px;
+  border-radius: 30px;
   width: max-content;
   text-align: center;
   margin-bottom: 2rem;
@@ -125,6 +124,11 @@
   border-bottom: 1px #204255 solid;
 }
 
+.list-item:last-child{
+  border: 0;
+  margin-bottom: 0;
+}
+
 .list-item .icon{
   display: inline-block;
   text-align: center;
@@ -146,6 +150,7 @@
   margin: 0 auto;
   margin-bottom: 2rem;
   padding: 0.5rem 0;
+  cursor: pointer;
   outline: 3px solid #204255;
   background-color: #152C39;
 }
@@ -236,10 +241,15 @@
   .main{
     margin: 2rem auto;
     padding-top: 2rem;
+    border-radius: 40px;
   }
 
   .row{
     flex-direction: row;
+  }
+
+  .row.icon-temp{
+    margin-bottom: 0;
   }
 
   .icon-container{
@@ -248,10 +258,15 @@
 
   #temperature{
     bottom: 2rem;
+    font-size: calc(0.3vw + 3.5rem);
   }
 
   .time-container{
     margin-bottom: 2rem;
+  }
+
+  #time{
+    font-size: calc(0.3vw + 2.5rem);
   }
 
   .location.city, .location.country {
