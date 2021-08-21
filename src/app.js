@@ -9,14 +9,16 @@ const overlay = document.querySelector('.overlay');
 // EVENT LISTENERS
 // Desktop 'click' Event Listeners
 openModalButtons.forEach(button => {
-  button.addEventListener('click', ()=>{
+  button.addEventListener('click', (e)=>{
+    e.preventDefault();
     const modal = document.querySelector(button.dataset.target);
     ui.openModal(modal);
   });
 });
 
 closeModalButtons.forEach(button => {
-  button.addEventListener('click', ()=>{
+  button.addEventListener('click', (e)=>{
+    e.preventDefault();
     const modal = button.closest('.modal');
      ui.closeModal(modal);
   });
@@ -31,16 +33,18 @@ overlay.addEventListener('click', ()=>{
 
 // Smartphone 'touchstart' event listeners
 openModalButtons.forEach(button => {
-  button.addEventListener('touchend', ()=>{
+  button.addEventListener('touchend', (e)=>{
+    e.preventDefault();
     const modal = document.querySelector(button.dataset.target);
     ui.openModal(modal);
   });
 });
 
 closeModalButtons.forEach(button => {
-  button.addEventListener('touchend', ()=>{
+  button.addEventListener('touchend', (e)=>{
+    e.preventDefault();
     const modal = button.closest('.modal');
-     ui.closeModal(modal);
+    ui.closeModal(modal);
   });
 });
 
