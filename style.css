@@ -13,6 +13,15 @@
   color: aliceblue;
 }
 
+.main-main{
+  opacity: 0;
+  transition: 2s;
+}
+
+.main-main.active{
+  opacity: 1;
+}
+
 .main{
   background-color: #081B24;
   position: absolute;

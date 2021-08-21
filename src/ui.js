@@ -12,6 +12,7 @@ class UI {
     this.humidity = document.getElementById('humidity');
     this.uvIndex = document.getElementById('uv_index');
     this.airQuality = document.getElementById('air_quality');
+    this.main = document.querySelector('.main-main');
 
   }
 
@@ -43,6 +44,18 @@ class UI {
     this.humidity.innerHTML = `: &ensp;${data.current.humidity} %`;
     this.uvIndex.innerHTML = `: &ensp;${data.current.uv}`;
     this.airQuality.innerHTML = `: &ensp;${this.getAirQuality(data.current.air_quality["us-epa-index"])}`;
+
+    setTimeout(() => {
+      console.log('Hey');
+      this.makeMainVisible();
+    }, 1000);
+  }
+
+  // Changes the class to make main visible
+  makeMainVisible(){
+    if(!this.main.classList.contains('active')){
+      this.main.classList.add('active');
+    }
   }
 
   // Gets time from localtime string
