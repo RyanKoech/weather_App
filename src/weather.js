@@ -15,6 +15,7 @@ class Weather{
       .then(data => {
         if(typeof data.error !== 'undefined'){
           console.log(data.error.message);
+          ui.showErrorMessage(data.error.message);
         }else{
           ui.paint(data);
           const localStorage = new Storage();

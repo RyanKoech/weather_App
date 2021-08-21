@@ -45,6 +45,28 @@
   gap: 1rem;
 }
 
+/* Error message Styling */
+.error-message{
+  background-color: #f6e4c2;
+  position: relative;
+  width: 95%;
+  z-index: 1;
+  border-radius: 0px 0px 25px 25px;
+  border: 2px orange solid;
+  box-shadow: 0px 0px 10px orange;
+  margin: 0 auto;
+  color: orange;
+  text-align: center;
+  padding: 1rem 0;
+  left: 0;
+  transform: translateY(-125%);
+  transition: 0.4s;
+}
+
+.error-message.err-active{
+  transform: translateY(0);
+}
+
 /* First Section Styling */
 
 .row.icon-temp{

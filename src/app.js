@@ -94,10 +94,10 @@ function getWeather(){
   cityInput.value = '';
 
   if(city === ''){
-    console.log('PLease enter a city');
+    ui.showErrorMessage('Please Enter a City')
     return
   }
-  
+
   //Change City location
   weather.setCity(city);
 

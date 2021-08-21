@@ -13,6 +13,7 @@ class UI {
     this.uvIndex = document.getElementById('uv_index');
     this.airQuality = document.getElementById('air_quality');
     this.main = document.querySelector('.main-main');
+    this.errorMessage = document.querySelector('.error-message');
 
   }
 
@@ -101,6 +102,23 @@ class UI {
     return url.replace(resolution, '128x128');
   }
 
+  // Adds message and class to make error message visible
+  showErrorMessage(msg){
+    this.errorMessage.textContent = msg;
+    if(!this.errorMessage.classList.contains('err-active')){
+      this.errorMessage.classList.add('err-active');
+      setTimeout(() => {
+        this.hideErrorMessage();
+      }, 3000);
+    }
+  }
+
+  // Removes class to make error message invisible
+  hideErrorMessage(){
+    if(this.errorMessage.classList.contains('err-active')){
+      this.errorMessage.classList.remove('err-active');
+    }
+  }
 
 }
 
