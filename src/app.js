@@ -31,20 +31,20 @@ overlay.addEventListener('click', ()=>{
 
 // Smartphone 'touchstart' event listeners
 openModalButtons.forEach(button => {
-  button.addEventListener('touchstart', ()=>{
+  button.addEventListener('touchend', ()=>{
     const modal = document.querySelector(button.dataset.target);
     ui.openModal(modal);
   });
 });
 
 closeModalButtons.forEach(button => {
-  button.addEventListener('touchstart', ()=>{
+  button.addEventListener('touchend', ()=>{
     const modal = button.closest('.modal');
      ui.closeModal(modal);
   });
 });
 
-overlay.addEventListener('touchstart', ()=>{
+overlay.addEventListener('touchend', ()=>{
   const modals = document.querySelectorAll('.modal.active');
   modals.forEach(modal => {
     ui.closeModal(modal);
