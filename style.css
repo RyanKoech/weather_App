@@ -192,6 +192,21 @@
   outline: 5px solid #204255;
 }
 
+.credits{
+  text-align: center;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.credits a{
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.credits a:hover{
+  text-decoration: underline;
+}
+
 /* Modal Styling */
 .overlay{
   position: fixed;

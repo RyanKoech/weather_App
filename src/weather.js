@@ -23,7 +23,10 @@ class Weather{
           console.log(data);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        ui.showErrorMessage('Fatal Error. Contact the developer');
+        console.log(err);
+      });
   }
 
   // Changes value of city attribute
