@@ -20,7 +20,7 @@ class Weather{
           ui.paint(data);
           const localStorage = new Storage();
           localStorage.setLocationData(this.city);
-          console.log(data);
+          // console.log(data);
         }
       })
       .catch(err => {

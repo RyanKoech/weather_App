@@ -14,6 +14,7 @@ class UI {
     this.airQuality = document.getElementById('air_quality');
     this.main = document.querySelector('.main-main');
     this.errorMessage = document.querySelector('.error-message');
+    this.modal = document.getElementById('modal');
 
   }
 
@@ -45,6 +46,8 @@ class UI {
     this.humidity.innerHTML = `: &ensp;${data.current.humidity} %`;
     this.uvIndex.innerHTML = `: &ensp;${data.current.uv}`;
     this.airQuality.innerHTML = `: &ensp;${this.getAirQuality(data.current.air_quality["us-epa-index"])}`;
+
+    this.closeModal(this.modal);
 
     setTimeout(() => {
       this.makeMainVisible();
