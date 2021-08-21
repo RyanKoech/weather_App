@@ -60,3 +60,5 @@ class EasyHTTP {
       return resData + '....Deleted';
   }
 }
+
+export const http = new EasyHTTP();
