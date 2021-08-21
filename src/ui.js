@@ -42,7 +42,7 @@ class UI {
     this.pressure.innerHTML = `: &ensp;${data.current.pressure_mb} milibars`;
     this.humidity.innerHTML = `: &ensp;${data.current.humidity} %`;
     this.uvIndex.innerHTML = `: &ensp;${data.current.uv}`;
-    this.airQuality.innerHTML = `: &ensp; ${this.getAirQuality(data.current.air_quality["us-epa-index"])}`;
+    this.airQuality.innerHTML = `: &ensp;${this.getAirQuality(data.current.air_quality["us-epa-index"])}`;
   }
 
   // Gets time from localtime string

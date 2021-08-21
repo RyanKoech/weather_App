@@ -1,10 +1,11 @@
 // IMPORTS
 import {ui} from './ui.js';
-// import {http} from './http.js';
 import Weather from './weather.js';
+import Storage from './storage.js';
 
 //Global Variables and constants
-const weather = new Weather('London');
+const localStorage = new Storage();
+const weather = new Weather(localStorage.getLocationData());
 
 
 // DOM CONSTANTS
@@ -15,6 +16,10 @@ const saveButton = document.querySelector('#save_btn');
 const cityInput = document.getElementById('city_input');
 
 // EVENT LISTENERS
+document.addEventListener('DOMContentLoaded', () => {
+  weather.fetchWeatherData();
+});
+
 // Desktop 'click' Event Listeners
   // To open modal
 openModalButtons.forEach(button => {
@@ -92,6 +97,8 @@ function getWeather(){
     console.log('PLease enter a city');
     return
   }
+  //Store city in local storage
+  localStorage.setLocationData(city);
 
   //Change City location
   weather.setCity(city);
