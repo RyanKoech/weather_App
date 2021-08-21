@@ -31,8 +31,8 @@ class UI {
 
   // Paints the data from the api into the UI
   paint(data){
-    console.log(`https:${data.current.condition.icon}`);
-    this.weatherIcon.setAttribute('src', `https:${data.current.condition.icon}`);
+    // console.log(this.getSharperImageUrl(`https:${data.current.condition.icon}`));
+    this.weatherIcon.setAttribute('src', this.getSharperImageUrl(`https:${data.current.condition.icon}`));
     this.temperature.textContent = `${data.current.temp_c}°C`;
     this.condition.textContent = data.current.condition.text;
     this.time.textContent = this.getTime(data.location.localtime);
@@ -81,6 +81,12 @@ class UI {
     } else {
       return 'Air quality unknown'
     }
+  }
+
+  //Replaces 64x64 with 128x128 for higher quality icons
+  getSharperImageUrl(url){
+    const resolution = /64x64/g;
+    return url.replace(resolution, '128x128');
   }
 
 
