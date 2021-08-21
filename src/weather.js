@@ -13,10 +13,14 @@ class Weather{
   fetchWeatherData(){
     http.get(`https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.city}&aqi=yes`)
       .then(data => {
-        ui.paint(data);
-        const localStorage = new Storage();
-        localStorage.setLocationData(this.city);
-        console.log(data);
+        if(typeof data.error !== 'undefined'){
+          console.log(data.error.message);
+        }else{
+          ui.paint(data);
+          const localStorage = new Storage();
+          localStorage.setLocationData(this.city);
+          console.log(data);
+        }
       })
       .catch(err => console.log(err));
   }

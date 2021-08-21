@@ -46,7 +46,6 @@ class UI {
     this.airQuality.innerHTML = `: &ensp;${this.getAirQuality(data.current.air_quality["us-epa-index"])}`;
 
     setTimeout(() => {
-      console.log('Hey');
       this.makeMainVisible();
     }, 1000);
   }
