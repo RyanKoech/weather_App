@@ -32,7 +32,7 @@ class UI {
   // Paints the data from the api into the UI
   paint(data){
     console.log(data.current.condition.icon);
-    this.weatherIcon.setAttribute('src', data.current.condition.icon);
+    this.weatherIcon.setAttribute('src', `https:${data.current.condition.icon}`);
     this.temperature.textContent = `${data.current.temp_c}°C`;
     this.condition.textContent = data.current.condition.text;
     this.time.textContent = this.getTime(data.location.localtime);
