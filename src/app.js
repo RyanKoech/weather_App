@@ -45,23 +45,10 @@ overlay.addEventListener('click', ()=>{
   //To initiate fetching weather data
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const city = cityInput.value;
-  cityInput.value = '';
-
-  if(city === ''){
-    console.log('PLease enter a city');
-    return
-  }
-
-  //Change City location
-  weather.setCity(city);
-
-  //Fetch data
-  weather.fetchWeatherData();
+  getWeather();
 });
 
 // Smartphone 'touchstart' event listeners
-
   // To open modal
 openModalButtons.forEach(button => {
   button.addEventListener('touchend', (e)=>{
@@ -87,3 +74,28 @@ overlay.addEventListener('touchend', ()=>{
     ui.closeModal(modal);
   });
 });
+
+  //To initiate fetching weather data
+saveButton.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  getWeather();
+});
+
+// FUNCTIONS
+
+//Initiate Process of fetching storing and displaying data
+function getWeather(){
+  const city = cityInput.value;
+  cityInput.value = '';
+
+  if(city === ''){
+    console.log('PLease enter a city');
+    return
+  }
+
+  //Change City location
+  weather.setCity(city);
+
+  //Fetch data
+  weather.fetchWeatherData();
+}
