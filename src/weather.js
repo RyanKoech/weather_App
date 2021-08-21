@@ -1,6 +1,7 @@
 // IMPORTS
 import {http} from './http.js';
 import {ui} from './ui.js';
+import Storage from './storage.js';
 
 class Weather{
   constructor(city) {
@@ -13,6 +14,8 @@ class Weather{
     http.get(`https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.city}&aqi=yes`)
       .then(data => {
         ui.paint(data);
+        const localStorage = new Storage();
+        localStorage.setLocationData(this.city);
         console.log(data);
       })
       .catch(err => console.log(err));

@@ -97,9 +97,7 @@ function getWeather(){
     console.log('PLease enter a city');
     return
   }
-  //Store city in local storage
-  localStorage.setLocationData(city);
-
+  
   //Change City location
   weather.setCity(city);
 
