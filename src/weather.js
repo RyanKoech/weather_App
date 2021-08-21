@@ -10,7 +10,7 @@ class Weather{
 
   // Fetch Data from API
   fetchWeatherData(){
-    http.get(`http://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.city}&aqi=yes`)
+    http.get(`https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.city}&aqi=yes`)
       .then(data => {
         ui.paint(data);
         console.log(data);
