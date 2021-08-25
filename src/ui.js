@@ -71,7 +71,7 @@ class UI {
   getAM_PM(time){
     const timeArr = time.split(':');
     let timeOfDay = 'AM';
-    let minute = timeArr[1];
+    let minute = parseInt(timeArr[1]);
     let hour = parseInt(timeArr[0]);
     if (hour > 12){
       hour = hour - 12;
