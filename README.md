@@ -1,8 +1,9 @@
 # weather_App
 
-A simple JavaScript(Vanilla) weather application
+A simple device-adaptable JavaScript(Vanilla) weather web-application
 
-**Developement Stage: Complete but subject to improvements and updates**
+**Developement Stage: Complete but subject to improvements and updates** <br>
+You can review it [here](https://ryankoech.github.io/weather_App/)
 
 ## Extra Resources
   - Luncay: Used to design the Application UI (Subject to improvements during development)
