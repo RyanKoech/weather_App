@@ -73,11 +73,45 @@ class UI {
     let timeOfDay = 'AM';
     let minute = timeArr[1];
     let hour = parseInt(timeArr[0]);
-    if (hour >= 12){
+    if (hour > 12){
       hour = hour - 12;
       timeOfDay = 'PM';
     }
-    return `${hour} : ${minute} ${timeOfDay}`;
+
+    this.updateTime(hour, minute);
+    if( hour < 10 && minute < 10){
+      return `0${hour} : 0${minute} ${timeOfDay}`;
+    } else if (hour < 10){
+      return `0${hour} : ${minute} ${timeOfDay}`;
+    } else if (minute < 10){
+      return `${hour} : 0${minute} ${timeOfDay}`;
+    }
+  }
+
+  // Updates the current time
+  updateTime(hour, minute){
+    let timeOfDay = 'AM';
+    if (minute >= 60){
+      minute = 0;
+      hour ++;
+    }
+
+    if (hour > 12){
+      timeOfDay = 'PM';
+      hour = hour - 12;
+    }
+    if( hour < 10 && minute < 10){
+      this.time.textContent =  `0${hour} : 0${minute} ${timeOfDay}`;
+    } else if (hour < 10){
+      this.time.textContent =  `0${hour} : ${minute} ${timeOfDay}`;
+    } else if (minute < 10){
+      this.time.textContent =  `${hour} : 0${minute} ${timeOfDay}`;
+    }
+    minute ++;
+    setTimeout(() => {
+      this.updateTime(hour, minute);
+    }, 60000)
+
   }
 
   //Returns air quality interpretation
