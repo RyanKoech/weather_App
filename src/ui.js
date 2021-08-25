@@ -85,6 +85,8 @@ class UI {
       return `0${hour} : ${minute} ${timeOfDay}`;
     } else if (minute < 10){
       return `${hour} : 0${minute} ${timeOfDay}`;
+    } else {
+      return `${hour} : ${minute} ${timeOfDay}`;
     }
   }
 
@@ -106,6 +108,8 @@ class UI {
       this.time.textContent =  `0${hour} : ${minute} ${timeOfDay}`;
     } else if (minute < 10){
       this.time.textContent =  `${hour} : 0${minute} ${timeOfDay}`;
+    } else {
+      this.time.textContent =  `${hour} : ${minute} ${timeOfDay}`;
     }
     minute ++;
     setTimeout(() => {
