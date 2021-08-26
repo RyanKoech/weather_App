@@ -112,6 +112,8 @@ class UI {
       this.time.textContent =  `${hour} : ${minute} ${timeOfDay}`;
     }
     minute ++;
+
+    //To count 60 seconds before recurring
     setTimeout(() => {
       this.updateTime(hour, minute);
     }, 60000)
